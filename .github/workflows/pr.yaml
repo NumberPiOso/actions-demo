@@ -1,15 +1,14 @@
-name: PR comment
+name: PR Comment
 on: issue_comment
 
-jobs:
+jobs:     
   debug:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest    
     steps:
     - name: see payload
       run: echo "$PAYLOAD"
       env:
-        PAYLOAD: ${{ toJSON{github.event} }}
-
+        PAYLOAD: ${{ toJSON(github.event) }}
   comment:
     runs-on: ubuntu-latest  
     steps:
